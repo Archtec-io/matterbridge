@@ -96,7 +96,7 @@ func (b *Bmatrix) cacheDisplayName(mxid string, displayName string) string {
 			conflict = true
 			// TODO: it would be nice to be able to rename previous messages from this user.
 			// The current behavior is that only users with clashing usernames and *that have spoken since the bridge last started* will get their mxids shown, and I don't know if that's the expected behavior.
-			v.displayName = fmt.Sprintf("%s (%s)", displayName, mxid)
+			v.displayName = fmt.Sprintf("%s", displayName)
 			b.NicknameMap[mxid] = v
 		}
 
@@ -106,7 +106,7 @@ func (b *Bmatrix) cacheDisplayName(mxid string, displayName string) string {
 	}
 
 	if conflict {
-		displayName = fmt.Sprintf("%s (%s)", displayName, mxid)
+		displayName = fmt.Sprintf("%s", displayName)
 	}
 
 	for _, v := range toDelete {

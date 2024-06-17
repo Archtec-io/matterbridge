@@ -45,6 +45,7 @@ func main() {
 	if strings.Contains(version.Release, "-dev") {
 		logger.Println("WARNING: THIS IS A DEVELOPMENT VERSION. Things may break.")
 	}
+	logger.Println("Running archtec flavored Matterbridge.")
 
 	cfg := config.NewConfig(rootLogger, *flagConfig)
 	cfg.BridgeValues().General.Debug = *flagDebug
